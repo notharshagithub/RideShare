@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: rideshare-backend
+  data:
+    mongodb:
+      # Using embedded MongoDB - no installation required!
+      # Will automatically start an in-memory MongoDB instance
+      database: rideshare
+  mongodb:
+    embedded:
+      version: 6.0.6
+  
+server:
+  port: 8081
+
+jwt:
+  secret: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
+  expiration: 86400000  # 24 hours in milliseconds
+
+logging:
+  level:
+    org.springframework.data.mongodb: INFO
+    de.flapdoodle.embed.mongo: INFO
