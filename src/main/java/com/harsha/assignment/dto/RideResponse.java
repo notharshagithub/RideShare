@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -18,6 +19,9 @@ public class RideResponse {
     private String dropLocation;
     private String status;
     private LocalDateTime createdAt;
+    private LocalDate createdDate;
+    private Double fareAmount;
+    private Double distanceKm;
     
     public static RideResponse fromRide(Ride ride) {
         return new RideResponse(
@@ -27,7 +31,10 @@ public class RideResponse {
             ride.getPickupLocation(),
             ride.getDropLocation(),
             ride.getStatus(),
-            ride.getCreatedAt()
+            ride.getCreatedAt(),
+            ride.getCreatedDate(),
+            ride.getFareAmount(),
+            ride.getDistanceKm()
         );
     }
 }
